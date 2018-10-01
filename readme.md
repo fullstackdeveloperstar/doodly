@@ -47,3 +47,4 @@ export CSC_NAME="Company, Inc. (XXXXXXXXXX)" # mac signature
 export CSC_LINK="https://www.doodly.net/cert/XXXXXXXXXX.p12" # win signature for electron apps
 export CSC_KEY_PASSWORD="XXXXXXXXXX" # key for sig```
 ````
+![alt text](https://github.com/fullstackdeveloperstar/doodly/blob/master/doodly.png)
