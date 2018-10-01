@@ -1,0 +1,36 @@
+.auth {
+  color: #222;
+  width: 240px;
+}
+.auth .row {
+  margin-bottom: 15px;
+}
+.auth input {
+  font-size: 14px;
+  color: #444;
+}
+.auth input[type=text], .login input[type=password] {
+  width: 100%;
+}
+.auth label {
+  display: block;
+  margin-bottom: 5px;
+}
+.auth .btn {
+  font-size: 14px;
+  padding: 5px 20px;
+}
+.auth a {
+  color: #222;
+}
+
+
+.auth.login {
+  width: 240px;
+}
+.auth.forgot-pass {
+  width: 350px;
+}
+.auth.reset-pass {
+  width: 500px;
+}

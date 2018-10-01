@@ -1,0 +1,7 @@
+node_modules
+/dist
+/release
+app/build
+app/bundled
+.env
+.DS_Store

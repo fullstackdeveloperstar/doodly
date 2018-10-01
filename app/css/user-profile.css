@@ -1,0 +1,41 @@
+.user-profile {
+  width: 600px;
+}
+.user-profile .details {
+  margin: 40px;
+}
+.user-profile .details img {
+  margin-right: 40px;
+}
+.user-profile .details h1 {
+  margin: 0 0 0.5em;
+}
+.user-profile .details h3 {
+  margin: 0;
+}
+
+.user-profile section h2 {
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid #c2c0c7;
+}
+.user-profile section .content {
+  padding: 15px 0;
+  margin-bottom: 40px;
+}
+
+.user-profile .password .row {
+  margin-bottom: 20px;
+}
+.user-profile .password input[type=text] {
+  width: 100%;
+}
+.user-profile .password label {
+  display: block;
+}
+
+.user-profile .purchases .purchase {
+  margin-bottom: 10px;
+}
+.user-profile .purchases .purchased_on {
+  width: 160px;
+}

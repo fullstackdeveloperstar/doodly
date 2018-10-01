@@ -1,0 +1,338 @@
+.video-timeline {
+  height: 198px;
+  background: #eeeeee;
+  border-top: 1px solid #c0c2c7;
+  z-index: 999;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.video-timeline .grid {
+}
+
+.video-timeline .header {
+  width: 100px;
+  flex-shrink: 0;
+  border-right: 1px solid #c0c2c7;
+}
+.video-timeline .header i {
+  color: #8f8f8f;
+}
+.video-timeline .header .settings { height: 35px; }
+.video-timeline .scrollable {
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+.video-timeline .resizing {
+  cursor: ew-resize !important;
+}
+
+.video-timeline .settings button span{
+  font-size: 12px;
+}
+.video-timeline .settings > * {
+  color: #444;
+}
+.video-timeline .settings button:hover > * {
+  color: #499df5;
+}
+
+.video-timeline .scenes {
+  border-top: 1px solid #c0c2c7;
+  border-bottom: 1px solid #c0c2c7;
+  height: 80px;
+  overflow: hidden;
+}
+.video-timeline .scene {
+  /*background: #fff;*/
+  border-right: 1px solid #c0c2c7;
+  box-sizing: border-box;
+  height: 80px;
+  opacity: 0.5;
+  position: relative;
+  cursor: pointer;
+}
+.video-timeline .scene.selected {
+  opacity: 1;
+}
+.video-timeline .scene.blackboard {
+  /*-webkit-filter: invert(100%);*/
+  opacity: 0.6;
+}
+.video-timeline .scene.blackboard.selected {
+  opacity: 0.75;
+}
+
+.video-timeline .scene.greenboard {
+  background: #2f5848;
+  opacity: 0.9;
+}
+.video-timeline .scene.greenboard img {
+  background: transparent;
+}
+.video-timeline .scene.greenboard.selected {
+  opacity: 1;
+}
+
+.video-timeline .scenes .hidden {
+  display: none;
+}
+.video-timeline .scene.clear {
+  background: transparent;
+  border: none;
+  cursor: default;
+}
+.video-timeline .scenes .drop-target {
+  margin-left: 250px;
+}
+.video-timeline .scenes .drop-target:before {
+  content: '';
+  background: rgba(100, 255, 100, 0.3);
+  box-sizing: border-box;
+  width: 250px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -250px;
+}
+.video-timeline .scene .resize-handle {
+  content: '';
+  width: 7px;
+  height: 100%;
+  position: absolute;
+  right: -5px;
+  z-index: 999;
+  cursor: ew-resize;
+}
+
+.video-timeline .music {
+  border-bottom: 1px solid #c0c2c7;
+  height: 35px;
+  overflow: hidden;
+  position: relative;
+}
+.video-timeline .music .audio {
+  box-sizing: content-box;
+  background: #eee;
+  box-sizing: border-box;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+.video-timeline .music .audio .width_wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.video-timeline .music .audio:before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #c0c2c7;
+  top: 0;
+  left: -1px;
+  z-index: 9999;
+}
+.video-timeline .music .audio:after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background-color: #c0c2c7;
+  top: 0;
+  right: -1px;
+  z-index: 9999;
+}
+.video-timeline .music .audio.dragged {
+  opacity: 0;
+}
+.video-timeline .music .audio .width_wrapper {
+  background: rgba(255, 255, 255, 0.8);
+}
+.video-timeline .music .audio .btn.remove {
+  color: #666;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  visibility: hidden;
+  z-index: 99999;
+}
+.video-timeline .music .audio .btn.remove i:hover {
+  color: red;
+}
+.video-timeline .music .audio:hover .btn.remove {
+  visibility: visible;
+}
+.video-timeline .music .drop-target {
+  display: none;
+  background: rgba(100, 255, 100, 0.3);
+  box-sizing: border-box;
+  height: 100%;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+}
+.video-timeline .music .audio .resize-handle {
+  content: '';
+  width: 5px;
+  height: 100%;
+  position: absolute;
+  z-index: 9999;
+  cursor: ew-resize;  
+  top: 0;
+}
+.video-timeline .music .audio > .resize-handle.start {
+  left: -3px;
+}
+.video-timeline .music .audio > .resize-handle.end {
+  right: -3px;
+}
+.video-timeline .music .audio .effect {
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+  .video-timeline .music .audio .effect:before, .video-timeline .music .audio .effect:after {
+    z-index: 999;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;        
+  }
+  .video-timeline .music .audio .effect .resize-handle {
+    position: absolute;
+    top: 0;
+  }
+  .video-timeline .music .audio .effect.fadeIn {
+    left: 0;
+    border-right: 1px solid rgba(73, 157, 245, 0.5);
+    background: rgba(73, 157, 245, 0.1);
+  }
+    .video-timeline .music .audio .effect.fadeIn:before {
+      height: 50%;
+      background: 
+        linear-gradient(
+          to top left,
+          rgba(0,0,0,0) 0%,
+          rgba(0,0,0, 0) calc(50% - 0.8px),
+          rgba(73, 157, 245, 0.5) 50%,
+          rgba(255,255,255, 0.7) calc(50% + 0.8px),
+          rgba(255,255,255, 0.7) 100%        
+        )
+    }
+    .video-timeline .music .audio .effect.fadeIn:after {
+      height: 50%;
+      top: 50%;
+      background: 
+        linear-gradient(
+          to top right,
+          rgba(255,255,255, 0.7) 0%,
+          rgba(255,255,255, 0.7) calc(50% - 0.8px),
+          rgba(73, 157, 245, 0.5) 50%,
+          rgba(0,0,0,0) calc(50% + 0.8px),
+          rgba(0,0,0,0) 100%        
+        )
+    }
+    .video-timeline .music .audio .effect.fadeIn .resize-handle {
+      right: -3px;
+    }
+  .video-timeline .music .audio .effect.fadeOut {
+    right: 0;
+    border-left: 1px solid rgba(73, 157, 245, 0.5);
+    background: rgba(73, 157, 245, 0.1);
+  }
+    .video-timeline .music .audio .effect.fadeOut:before {
+      height: 50%;
+      background: 
+        linear-gradient(
+          to top right,
+          rgba(0,0,0,0) 0%,
+          rgba(0,0,0, 0) calc(50% - 0.8px),
+          rgba(73, 157, 245, 0.5) 50%,
+          rgba(255,255,255, 0.7) calc(50% + 0.8px),
+          rgba(255,255,255, 0.7) 100%        
+        )
+    }
+    .video-timeline .music .audio .effect.fadeOut:after {
+      height: 50%;
+      top: 50%;
+      background: 
+        linear-gradient(
+          to top left,
+          rgba(255,255,255, 0.7) 0%,
+          rgba(255,255,255, 0.7) calc(50% - 0.8px),
+          rgba(73, 157, 245, 0.5) 50%,
+          rgba(0,0,0,0) calc(50% + 0.8px),
+          rgba(0,0,0,0) 100%        
+        )
+    }
+    .video-timeline .music .audio .effect.fadeOut .resize-handle {
+      left: -3px;
+    }
+
+.video-timeline .music .audio.recorder {
+  position: relative;
+  z-index: 999999;
+}
+.video-timeline .music .audio.recorder .btn.control {
+  color: red;
+  padding: 0;
+}
+.video-timeline .music .audio.recorder .btn.remove {
+  top: -5px;
+  right: -5px;
+}
+.video-timeline .music .audio.recorder .flash {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  animation: flash-red 0.5s linear infinite alternate;
+}
+
+@keyframes flash-red {
+  0% {
+    background: transparent;
+  }
+  100% {
+    background: #f1635c;
+  }
+}
+
+/* ----- SCROLL BAR ----- */
+.video-timeline ::-webkit-scrollbar {
+  width: 8px;
+	height: 9px;
+	background: transparent;
+	cursor: pointer;
+}
+
+/* Track */
+.video-timeline ::-webkit-scrollbar-track {
+	background: transparent;
+	margin: 0;
+}
+
+/* Corner */
+.video-timeline ::-webkit-scrollbar-corner {
+	background: transparent;
+}
+
+/* Handle */
+.video-timeline ::-webkit-scrollbar-thumb {
+	margin: 0;
+  background: #499df5;
+	border-radius: 5px;
+}
+.video-timeline ::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(0,0,0,0.3);
+}
